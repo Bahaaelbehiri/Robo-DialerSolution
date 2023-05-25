@@ -7,37 +7,42 @@ namespace Robo_Dialer
         static void Main(string[] args)
         {
             HomePhone h1 = new HomePhone();
-            CellPhone h2 = new CellPhone();
             string companyName = string.Empty;
             string phoneNumber = string.Empty;
-               
+            string typePhone = string.Empty;
+            // Console.WriteLine("Log in Please");
             // input dial number
             Console.WriteLine("Enter Dial() Number ");
             phoneNumber = String.Concat(Console.ReadLine().Where(c => !Char.IsWhiteSpace(c)));
-            
-            
-            bool result = h1.Login(phoneNumber);
+
+
+            bool result = h1.Dial(phoneNumber);
             if (result)
             {
+                typePhone = h1.phone_type;
                 companyName = h1.company_name;
                 phoneNumber = h1.phoneNumber;
-                if (h1.type_phone=="1")
 
+                if (typePhone == "1")
                 {
-                    h2.print(companyName, phoneNumber);
+                    Console.WriteLine(companyName + " is being dialed using  1+" + phoneNumber);
                 }
                 else
                 {
-                    h1.print(companyName, phoneNumber);
+                    Console.WriteLine(companyName + " is being dialed using  " + phoneNumber);
+
                 }
+
             }
-             else
+            else
             {
-                h1.printErrordialed();
-    
+                Console.WriteLine("The number that you have been dialed is wrong");
+
             }
 
-            
+
+           
+
 
 
             Console.ReadLine();

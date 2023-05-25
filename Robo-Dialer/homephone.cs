@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace Robo_Dialer
 {
-    class HomePhone : Phone
+    class HomePhone : cellPhone
     {
 
-        public override void print(string companyName, string phoneNumber)
-        {
-            Console.WriteLine(companyName + " is being dialed using  " + phoneNumber);
-        }
     }
 }
